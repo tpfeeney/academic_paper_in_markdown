@@ -6,10 +6,10 @@ I was interested in writing a paper in markdown. This was because I was tired of
 Ive included some examples of forms you can use for yourself both without anything extra and with YAML alterations that need a .lua file.
 
 ## Here is a sample of the basic YAML format
-![Basic Yaml](../academic_abstract_in_markdown/basic.png)
+![Basic Yaml](basic.png)
 
 ## Here is a sample of the augmented YAML format
-![Basic Yaml](../academic_abstract_in_markdown/augmented.png)
+![Augmented Yaml](augmented.png)
 
 
 
