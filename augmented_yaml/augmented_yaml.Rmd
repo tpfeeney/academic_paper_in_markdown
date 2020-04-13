@@ -1,0 +1,82 @@
+---
+title: |
+  **A most wonderful title.**
+subtitle: |
+    _and a nice subtitle_
+author:
+- First Author:
+    correspondence: yes
+    email: email@mail.com
+    institute:
+    - CoM
+    - IU
+- Second Author:
+    correspondence: no
+    institute:
+    - IU
+date: ''
+output:
+  pdf_document:
+    pandoc_args:
+    - --filter=pandoc-crossref
+    - --lua-filter=scholarly-metadata.lua
+    - --lua-filter=author-info-blocks.lua
+  word_document: default
+  bookdown::word_document2:
+    pandoc_args:
+    - --filter=pandoc-crossref
+    - --lua-filter=scholarly-metadata.lua
+    - --lua-filter=author-info-blocks.lua
+    - --reference-doc=Reference_Document.docx
+bibliography:
+- all_the_best_refs.bib
+header-includes:
+- \usepackage{setspace}\doublespacing
+- \usepackage[switch, pagewise, running]{lineno}
+- \linenumbers
+- \renewcommand\linenumberfont{\normalfont\small}
+institute:
+- IU: Imaginary University
+- CoM: College of Medicine
+csl: journal-of-the-american-college-of-surgeons.csl #include your reference format of choice here.
+abstract: |-
+ \singlespacing This is my dream abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  
+  
+  **Keywords: first, second, third**
+Keywords: Incidental Adrenal Mass, Endocrinology,
+---
+
+\twocolumn
+\doublespacing
+<!--\newpage-->
+\pagewiselinenumbers
+\begin{center}
+\textbf{Introduction:}
+\end{center}
+
+
+References can go into the manuscript in text @rothman_curbing_2010 or at the end [@rothman_causes_1976].
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+
+\newpage
+\singlespacing
+\onecolumn
+# References
