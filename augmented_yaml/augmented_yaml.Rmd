@@ -1,8 +1,6 @@
 ---
 title: |
   **A most wonderful title.**
-subtitle: |
-    _and a nice subtitle_
 author:
 - First Author:
     correspondence: yes
@@ -12,24 +10,26 @@ author:
     - IU
 - Second Author:
     correspondence: no
-    institute:
-    - IU
+    institute: IU
 date: ''
 output:
-  pdf_document:
-    pandoc_args:
-    - --filter=pandoc-crossref
-    - --lua-filter=scholarly-metadata.lua
-    - --lua-filter=author-info-blocks.lua
-  word_document: default
   bookdown::word_document2:
     pandoc_args:
     - --filter=pandoc-crossref
     - --lua-filter=scholarly-metadata.lua
     - --lua-filter=author-info-blocks.lua
     - --reference-doc=Reference_Document.docx
-bibliography:
-- all_the_best_refs.bib
+  pdf_document:
+    pandoc_args:
+    - --filter=pandoc-crossref
+    - --lua-filter=scholarly-metadata.lua
+    - --lua-filter=author-info-blocks.lua
+  html_document:
+    df_print: paged
+  word_document: default
+bibliography: all_the_best_refs.bib
+csl: journal-of-the-american-college-of-surgeons.csl
+always_allow_html: yes
 header-includes:
 - \usepackage{setspace}\doublespacing
 - \usepackage[switch, pagewise, running]{lineno}
@@ -40,14 +40,16 @@ header-includes:
 institute:
 - IU: Imaginary University
 - CoM: College of Magic
-csl: journal-of-the-american-college-of-surgeons.csl #include your reference format of choice here.
-abstract: |-
- \singlespacing This is my dream abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-  
-  
-  **Keywords: first, second, third**
+abstract: "\\singlespacing This is my dream abstract. Lorem ipsum dolor sit amet,
+  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+  nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+  in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+  cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n
+  \n \n **Keywords: first, second, third**"
+subtitle: |
+  _and a nice subtitle_
 Keywords: Incidental Adrenal Mass, Endocrinology,
-always_allow_html: true
 ---
 
 \twocolumn
