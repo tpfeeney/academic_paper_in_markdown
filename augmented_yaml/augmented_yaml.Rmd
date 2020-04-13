@@ -35,9 +35,11 @@ header-includes:
 - \usepackage[switch, pagewise, running]{lineno}
 - \linenumbers
 - \renewcommand\linenumberfont{\normalfont\small}
+- \usepackage{rotating}
+- \usepackage{float}
 institute:
 - IU: Imaginary University
-- CoM: College of Medicine
+- CoM: College of Magic
 csl: journal-of-the-american-college-of-surgeons.csl #include your reference format of choice here.
 abstract: |-
  \singlespacing This is my dream abstract. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -45,6 +47,7 @@ abstract: |-
   
   **Keywords: first, second, third**
 Keywords: Incidental Adrenal Mass, Endocrinology,
+always_allow_html: true
 ---
 
 \twocolumn
@@ -62,12 +65,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+```{r fig.cap="MPG by weight", message=F, echo=F, warning=F}
+library(tidyverse)
+plot(mtcars$wt, mtcars$mpg, main="Example of figure inserted into text",
+   xlab="Car Weight ", ylab="Miles Per Gallon ", pch=19)
+```
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
@@ -80,3 +89,26 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 \singlespacing
 \onecolumn
 # References
+
+<div id="refs"></div>
+
+\newpage
+
+```{r, results='asis', echo=FALSE}
+library(xtable)
+print(xtable(summary(cars), caption="Landscape table: Can make table landscape with xtable"),
+      floating.environment="sidewaystable", comment=FALSE)
+```
+
+```{r message=F, warning=F, echo=F, results="asis"}
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+landscape(kable(mtcars %>% glimpse(),booktabs=T, caption = "The second table, which you can make landscape with kable") %>% kable_styling(latex_options="striped"))
+```
+
+```{r fig.cap="MPG by weight", message=F, echo=F, warning=F}
+library(tidyverse)
+plot(mtcars$wt, mtcars$mpg, main="Example of figure included at end of document",
+   xlab="Car Weight ", ylab="Miles Per Gallon ", pch=19)
+```

@@ -9,5 +9,19 @@ Ive included some examples of forms you can use for yourself both without anythi
 Ill work on this as I learn more. Im really new at this so if there are changes that can improve these please let me know.
 
 
+Things Ive Included:
+
+Tables in landscape two ways, both included after the references
+
+In text figures and figures after the reference section
+
+
+Things im still learning how to do
+
+Include in text DAG or DAG at the end of a document; will likely require me learning TikzDevice
+
+Learning how to get a table to insert correctly in text with two column format
+
+Figure out how to get the tables to render appropriately when knitted to word-the tables currently only work when knitted to PDF
 
 ...more to come.
